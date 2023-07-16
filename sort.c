@@ -11,6 +11,22 @@ void swap(int* x, int* y){
 	*x =*y;
 	*y = temp;
 }
+void heapify(int arr[], int n, int i){
+    int largest = i;
+    int leftChild = 2 * i + 1;
+    int rightChild = 2 * i + 2;
+
+    if (leftChild < n && arr[leftChild] > arr[largest])
+        largest = leftChild;
+    if (rightChild < n && arr[rightChild] > arr[largest])
+        largest = rightChild;
+    
+    if (largest != i){
+        swap(&arr[i], &arr[largest]);
+	    heapify(arr, n, largest);
+    }
+
+}
 void heapSort(int arr[], int n)
 {
 }
