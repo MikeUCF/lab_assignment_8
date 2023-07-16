@@ -6,6 +6,11 @@ int extraMemoryAllocated;
 
 // implements heap sort
 // extraMemoryAllocated counts bytes of memory allocated
+void swap(int* x, int* y){
+	int* temp = *x;
+	*x =*y;
+	*y = temp;
+}
 void heapSort(int arr[], int n)
 {
 }
